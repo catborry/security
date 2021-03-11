@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style data-styles="">ion-icon {
+        visibility: hidden
+    }
+
+    .hydrated {
+        visibility: inherit
+    }</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="sie-edge">
+    <link rel="stylesheet" type="text/css" th:href="@{css/style.css}" href="/css/style.css">
+    <title>登录注册页面</title>
+
+    <!--图标库-->
+    <!--    <script src="https://unpkg.com/ionicons@4.2.2/dist/ionicons.js"></script><script src="https://unpkg.com/ionicons@4.2.2/dist/ionicons/ionicons.eyhlcpv8.js" type="module" crossorigin="true" data-resources-url="https://unpkg.com/ionicons@4.2.2/dist/ionicons/" data-namespace="ionicons"></script>-->
+
+    <!--    <template data-tmpl-style-tag="ion-icon"><style data-style-tag="ion-icon">:host{display:inline-block;width:1em;height:1em;contain:strict;-webkit-box-sizing:content-box!important;box-sizing:content-box!important;&#45;&#45;ion-color-base:currentColor}:host(.icon-small){font-size:var(&#45;&#45;ion-icon-size-small,18px)!important}:host(.icon-large){font-size:var(&#45;&#45;ion-icon-size-large,32px)!important}.icon-inner,svg{display:block;height:100%;width:100%}svg{fill:var(&#45;&#45;ion-color-base);stroke:var(&#45;&#45;ion-color-base)}:host(.ion-color-primary){&#45;&#45;ion-color-base:var(&#45;&#45;ion-color-primary, #3880ff)}:host(.ion-color-secondary){&#45;&#45;ion-color-base:var(&#45;&#45;ion-color-secondary, #0cd1e8)}:host(.ion-color-tertiary){&#45;&#45;ion-color-base:var(&#45;&#45;ion-color-tertiary, #f4a942)}:host(.ion-color-success){&#45;&#45;ion-color-base:var(&#45;&#45;ion-color-success, #10dc60)}:host(.ion-color-warning){&#45;&#45;ion-color-base:var(&#45;&#45;ion-color-warning, #ffce00)}:host(.ion-color-danger){&#45;&#45;ion-color-base:var(&#45;&#45;ion-color-danger, #f14141)}:host(.ion-color-light){&#45;&#45;ion-color-base:var(&#45;&#45;ion-color-light, #f4f5f8)}:host(.ion-color-medium){&#45;&#45;ion-color-base:var(&#45;&#45;ion-color-medium, #989aa2)}:host(.ion-color-dark){&#45;&#45;ion-color-base:var(&#45;&#45;ion-color-dark, #222428)}</style></template></head>-->
+<!--    <embed th:src="@{/music/backgroud.mp3}"  hidden="true" autostart="true" loop="true">-->
+</head>
+<body>
+<!--<embed th:src="@{music/backgroud.mp3}" autoplay="autoplay"  width="0" height="0" loop="loop" src="/music/backgroud.mp3">-->
+<div class="container" id="container">
+    <div class="form-container sign-up-container">
+        <form action="#">
+            <h1>第三方按钮注册</h1>
+            <div class="social-container"><a href="#" class="social">
+                <ion-icon name="logo-facebook" role="img" class="hydrated" aria-label="logo facebook"></ion-icon>
+            </a> <a href="#" class="social">
+                <ion-icon name="logo-googleplus" role="img" class="hydrated" aria-label="logo googleplus"></ion-icon>
+            </a> <a href="#" class="social">
+                <ion-icon name="logo-linkedin" role="img" class="hydrated" aria-label="logo linkedin"></ion-icon>
+            </a></div>
+            <span>或使用您的电子邮箱注册</span>
+            <input type="text" placeholder="姓名">
+            <input type="email" placeholder="邮箱">
+            <input type="password" placeholder="密码">
+            <button>注册</button>
+        </form>
+    </div>
+    <div class="form-container sign-in-container">
+        <form action="/" method="post">
+            <h1>第三方登录</h1>
+            <div class="social-container"><a href="#" class="social">
+                <ion-icon name="logo-facebook" role="img" class="hydrated" aria-label="logo facebook"></ion-icon>
+            </a> <a href="#" class="social">
+                <ion-icon name="logo-googleplus" role="img" class="hydrated" aria-label="logo googleplus"></ion-icon>
+            </a> <a href="#" class="social">
+                <ion-icon name="logo-linkedin" role="img" class="hydrated" aria-label="logo linkedin"></ion-icon>
+            </a></div>
+            <span>或用邮箱登录</span>
+            <input type="email" placeholder="邮箱" id="userName" name="username">
+            <input type="password" placeholder="密码" name="password">
+            <button type="submit">登录</button>
+        </form>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>欢迎回来</h1>
+                <p>与我们保持联系请登录您的个人信息</p>
+                <button class="ghost" id="signIn">登录</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h1>欢迎光临</h1>
+                <p>输入您的个人资料，并与我们一起开始旅程</p>
+                <button class="ghost" id="signUp">注册</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/script.js">
+
+</script>
+</body>
+</html>

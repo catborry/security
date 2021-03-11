@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -24,9 +25,31 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
+    /**
+     * 配置
+     * @param http
+     * @throws Exception
+     */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        super.configure(http);
+        http.formLogin()//自定义登录页面
+                .loginPage("/login.html")//登录页面设置
+                .loginProcessingUrl("/")//登录访问路径
+                .defaultSuccessUrl("/user").permitAll()
+                //登录成功跳转
+                .and().authorizeRequests()
+//                .antMatchers(
+//                        HttpMethod.GET,
+//                        "/**/*.css",
+//                        "/**/*.js",
+//                        "/**/*.png"
+//                ).permitAll()
+//                .antMatchers("/user").hasAuthority("admin")
+                .antMatchers("/user").hasAnyAuthority("admin","role")
+                .antMatchers("/").permitAll()//设置蕴蓄访问路径
+                .and().csrf().disable();//关闭csrf
+
+
     }
 
     @Override
