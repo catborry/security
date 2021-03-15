@@ -1,4 +1,4 @@
-package com.security.security.user;
+package com.security.security.user.controller;
 
 import com.security.security.user.domain.User;
 import com.security.security.user.mapper.UserMapper;

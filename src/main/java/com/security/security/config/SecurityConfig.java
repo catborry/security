@@ -47,6 +47,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                .antMatchers("/user").hasAuthority("admin")
                 .antMatchers("/user").hasAnyAuthority("admin","role")
                 .antMatchers("/").permitAll()//设置蕴蓄访问路径
+                .antMatchers("/regist").permitAll()
                 .and().csrf().disable();//关闭csrf
 
 
